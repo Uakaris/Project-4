@@ -1,9 +1,15 @@
-import DriverInfo from "../components/DriverInfo";
+import { Routes, Route } from "react-router-dom";
+
+// import DriverInfo from "../components/DriverInfo";
+import LandingPage from "../components/LandingPage";
+import NavBar from "../components/NavBar";
 
 const App = () => {
     return (
         <>
-            <DriverInfo />
+            <NavBar />
+            {/* <DriverInfo /> */}
+            <LandingPage />
         </>
     );
 };
