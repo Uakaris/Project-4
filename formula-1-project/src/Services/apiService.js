@@ -14,10 +14,10 @@
 // };
 
 const getAllDriversData = async () => {
-    const baseUrl = "https://api.openf1.org/v1/drivers";
+    const BASE_URL = "https://api.openf1.org/v1/drivers";
 
     try {
-        const response = await fetch(baseUrl);
+        const response = await fetch(BASE_URL + '?session_key=latest' );
 
         const data = await response.json();
         return data;
