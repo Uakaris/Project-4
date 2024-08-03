@@ -26,9 +26,38 @@ const getAllDriversData = async () => {
     }
 };
 
-// function to get all data on all drivers. Not sure how to filter this based on season from this api
-getAllDriversData().then((allDriversData) => {
-    // console.log(allDriversData);
-});
+const getLapData = async () => {
+    const BASE_URL = "https://api.openf1.org/v1/laps";
+    
+    try {
+        const response = await fetch(BASE_URL);
 
-export { getAllDriversData };
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching lap data", error);
+    }
+};
+
+// function for original testing to get all data on all drivers. 
+
+// getAllDriversData().then((allDriversData) => {
+//     // console.log(allDriversData);
+// });
+
+// Below function was an attempt to get driver info from ergast api as they have drivers by seaon. 
+// May need to come back to this.
+
+// getDriversBySeason = async () => {
+//     const BASE_URL = 'http://ergast.com/api/f1';
+//     try {
+//         const response = await fetch(BASE_URL + '/2024/drivers');
+
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error("Error fetching driver data by season", error);
+//     }
+// };
+
+export { getAllDriversData, getLapData };
