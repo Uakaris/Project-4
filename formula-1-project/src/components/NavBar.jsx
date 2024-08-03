@@ -5,8 +5,8 @@ const NavBar = () => {
         <nav>
             <ul>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='laps'>Compare Laps</Link></li>
-                <li><Link to='about'>About</Link></li>
+                <li><Link to='/graphStats'>Compare Laps</Link></li>
+                <li><Link to='/about'>About</Link></li>
             </ul>
         </nav>
     )
