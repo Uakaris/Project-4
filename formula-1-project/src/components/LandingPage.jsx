@@ -1,12 +1,14 @@
 import DriverInfo from "../components/DriverInfo";
 
+import "../components/LandingPage.css";
+
 const LandingPage = () => {
     return (
         <>
         <div className="container">
-            <header>
-                <h1>Formula 1 LapInsights</h1>
-            </header>
+            <div className="Logo">
+                <h1>F1 LapInsights</h1>
+            </div>
             <div>
                 <p></p>
             </div>

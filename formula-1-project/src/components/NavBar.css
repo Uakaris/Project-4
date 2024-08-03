@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(179, 10, 28, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Removes default list styling */
+}
+
+li {
+    margin: 0 10px; /* Adds spacing between list items */
+}
+
+nav a {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets the text color */
+    font-weight: bold; /* Makes the text bold */
+}
+
+nav a:hover {
+    color: #007bff; /* Change color on hover */
+}

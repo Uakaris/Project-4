@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <h1>About Formula 1 LapInsights</h1>
+        <h1>About F1 LapInsights</h1>
     )
 };
 
