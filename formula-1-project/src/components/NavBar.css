@@ -1,33 +1,38 @@
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 20px;
-    background: rgba(179, 10, 28, 0.6);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 16px 20px;
+    background: rgba(26, 26, 26, 0.2);
+    box-shadow: 0 2px 8px 0 #04d9ff;
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 20px;
+    transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 nav ul {
     display: flex;
     margin: 0;
     padding: 0;
-    list-style: none; /* Removes default list styling */
+    list-style: none;
 }
 
 li {
-    margin: 0 10px; /* Adds spacing between list items */
+    margin: 0 10px;
 }
 
 nav a {
-    text-decoration: none; /* Removes underline from links */
-    color: #333; /* Sets the text color */
-    font-weight: bold; /* Makes the text bold */
+    text-decoration: none;
+    color: #a1a1a1;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #04d9ff;
+    font-size: 20.5px;
+    transform: scale(1.1);
+    text-shadow: 1px 1px 10px #04d9ff;
 }
