@@ -16,7 +16,7 @@ const DriverInfo = () => {
 
     return (
         <main>
-            <h1>Drivers</h1>
+            <h1 className="DriversHeading">2024 Drivers</h1>
             <DriverList drivers={drivers} />
         </main>
     );

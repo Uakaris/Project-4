@@ -17,7 +17,7 @@ const getAllDriversData = async () => {
     const BASE_URL = "https://api.openf1.org/v1/drivers";
 
     try {
-        const response = await fetch(BASE_URL + '?session_key=latest' );
+        const response = await fetch(BASE_URL + "?session_key=latest");
 
         const data = await response.json();
         return data;
@@ -28,9 +28,11 @@ const getAllDriversData = async () => {
 
 const getLapData = async () => {
     const BASE_URL = "https://api.openf1.org/v1/laps";
-    
+
     try {
-        const response = await fetch(BASE_URL);
+        const response = await fetch(
+            BASE_URL + "?session_key=latest&driver_number=1"
+        );
 
         const data = await response.json();
         return data;
@@ -39,13 +41,18 @@ const getLapData = async () => {
     }
 };
 
-// function for original testing to get all data on all drivers. 
+// Test function to get lap data -
+getLapData().then((allLapData) => {
+    console.log(allLapData);
+});
+
+// function for original testing to get all data on all drivers.
 
 // getAllDriversData().then((allDriversData) => {
 //     // console.log(allDriversData);
 // });
 
-// Below function was an attempt to get driver info from ergast api as they have drivers by seaon. 
+// Below function was an attempt to get driver info from ergast api as they have drivers by seaon.
 // May need to come back to this.
 
 // getDriversBySeason = async () => {

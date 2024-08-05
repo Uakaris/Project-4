@@ -6,12 +6,18 @@ const NavBar = () => {
     return (
         <nav>
             <ul>
-                <li><Link to='/'>F1 LapInsights</Link></li>
-                <li><Link to='/graphStats'>Compare Laps</Link></li>
-                <li><Link to='/about'>About</Link></li>
+                <li>
+                    <Link to="/">F1 LapInsights</Link>
+                </li>
+                <li>
+                    <Link to="/driverInfo">Drivers</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
             </ul>
         </nav>
-    )
+    );
 };
 
 export default NavBar;

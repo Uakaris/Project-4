@@ -6,7 +6,7 @@ const DriverList = (props) => {
     ));
     return (
         <section>
-            <ul>{DriverListItems}</ul>
+            <ul className="DriversList">{DriverListItems}</ul>
         </section>
     );
 };
