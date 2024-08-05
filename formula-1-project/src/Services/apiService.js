@@ -1,17 +1,4 @@
-// const BASE_URL = 'https://api.openf1.org';
-
-// const getDriverList = async () => {
-//     try {
-//         const response = await fetch('https://api.openf1.org/v1/drivers?driver_number=1&session_key=9158');
-//         console.log(response);
-//         return response.map(driver => ({
-//             id:driver.driverId,
-//             name: `${driver.full_name} ${driver.headhshot_url}`
-//         }));
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+import xml2js from "xml2js";
 
 const getAllDriversData = async () => {
     const BASE_URL = "https://api.openf1.org/v1/drivers";
@@ -42,14 +29,34 @@ const getLapData = async () => {
 };
 
 // Test function to get lap data -
-getLapData().then((allLapData) => {
-    console.log(allLapData);
+// getLapData().then((allLapData) => {
+//     console.log(allLapData);
+// });
+
+const getDriverStandings = async () => {
+    const BASE_URL = "https://ergast.com/api/f1/current/driverStandings.json";
+
+    try {
+        const response = await fetch(BASE_URL);
+        let data = await response.json();
+        data = data["MRData"];
+        data = data["StandingsTable"];
+        data = data["StandingsLists"];
+        data = data[0]["DriverStandings"];
+        return data;
+    } catch (error) {
+        console.error("Error fetching driver standings:", error);
+    }
+};
+
+getDriverStandings().then((driverStandings) => {
+    console.log(driverStandings);
 });
 
 // function for original testing to get all data on all drivers.
 
 // getAllDriversData().then((allDriversData) => {
-//     // console.log(allDriversData);
+//     console.log(allDriversData);
 // });
 
 // Below function was an attempt to get driver info from ergast api as they have drivers by seaon.
@@ -67,4 +74,4 @@ getLapData().then((allLapData) => {
 //     }
 // };
 
-export { getAllDriversData, getLapData };
+export { getAllDriversData, getLapData, getDriverStandings };

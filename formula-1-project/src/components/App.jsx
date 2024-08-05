@@ -11,9 +11,14 @@ const App = () => {
         <>
             <NavBar />
             <Routes>
-              <Route path="/" element={ <LandingPage /> } />
-              <Route path="/driverInfo" element={ <DriverInfo getAllDriversData={getAllDriversData} /> } />
-              <Route path="/about" element={ <About /> } />
+                <Route path="/" element={<LandingPage />} />
+                <Route
+                    path="/driverInfo"
+                    element={
+                        <DriverInfo getAllDriversData={getAllDriversData} />
+                    }
+                />
+                <Route path="/about" element={<About />} />
             </Routes>
         </>
     );
