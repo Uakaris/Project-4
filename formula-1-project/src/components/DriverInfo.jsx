@@ -27,7 +27,7 @@ const DriverInfo = () => {
         return (
             <div className="LoadingContainer">
                 <p>
-                    <i className="fa-solid fa-spinner fa-spin"></i>
+                <i className="fa-solid fa-spinner fa-spin"></i>
                 </p>
             </div>
         );
