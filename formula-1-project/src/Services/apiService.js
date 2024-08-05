@@ -39,6 +39,7 @@ const getDriverStandings = async () => {
     try {
         const response = await fetch(BASE_URL);
         let data = await response.json();
+        // Drill down into the data to get DriverStandings
         data = data["MRData"];
         data = data["StandingsTable"];
         data = data["StandingsLists"];
@@ -49,9 +50,11 @@ const getDriverStandings = async () => {
     }
 };
 
-getDriverStandings().then((driverStandings) => {
-    console.log(driverStandings);
-});
+// Test function to get driver standings - 
+
+// getDriverStandings().then((driverStandings) => {
+//     console.log(driverStandings);
+// });
 
 // function for original testing to get all data on all drivers.
 

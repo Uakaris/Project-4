@@ -13,6 +13,9 @@ const NavBar = () => {
                     <Link to="/driverInfo">Drivers</Link>
                 </li>
                 <li>
+                    <Link to="/driverStandings">Standings</Link>
+                </li>
+                <li>
                     <Link to="/about">About</Link>
                 </li>
             </ul>
