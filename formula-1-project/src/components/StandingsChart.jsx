@@ -1,3 +1,5 @@
+import Chart from "chart.js/auto"
+
 const DriverStandingsChart = ({ driver }) => {
     return (
         <li className="DriverStandingsCard">
