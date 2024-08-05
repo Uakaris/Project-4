@@ -28,11 +28,6 @@ const getLapData = async () => {
     }
 };
 
-// Test function to get lap data -
-// getLapData().then((allLapData) => {
-//     console.log(allLapData);
-// });
-
 const getDriverStandings = async () => {
     const BASE_URL = "https://ergast.com/api/f1/current/driverStandings.json";
 
@@ -56,10 +51,25 @@ const getDriverStandings = async () => {
 //     console.log(driverStandings);
 // });
 
-// function for original testing to get all data on all drivers.
+const getConstructorStandings = async () => {
+    const BASE_URL = "http://ergast.com/api/f1/current/constructorStandings.json";
 
-// getAllDriversData().then((allDriversData) => {
-//     console.log(allDriversData);
+    try {
+        const response = await fetch(BASE_URL);
+        let data = await response.json();
+        data = data["MRData"];
+        data = data["StandingsTable"];
+        data = data["StandingsLists"];
+        data = data[0]["ConstructorStandings"];
+        return data;
+    } catch (error) {
+        console.error("Error fetching construcot standings:", error);
+        
+    }
+};
+
+// getConstructorStandings().then((constructorStandings) => {
+//     console.log(constructorStandings);
 // });
 
 // Below function was an attempt to get driver info from ergast api as they have drivers by seaon.
@@ -77,4 +87,4 @@ const getDriverStandings = async () => {
 //     }
 // };
 
-export { getAllDriversData, getLapData, getDriverStandings };
+export { getAllDriversData, getLapData, getDriverStandings, getConstructorStandings };
