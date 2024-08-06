@@ -2,25 +2,33 @@ import { useState, useEffect } from "react";
 
 import * as apiService from "../Services/apiService";
 import DriverStandingsList from "./StandingsCharts";
+import ConstructorStandingsList from "./ConstructorStandingsCharts";
 
 const DriverStandingsInfo = () => {
     const [driverStandings, setDriverStandings] = useState([]);
+    const [constructorStandings, setConstructorStandings] = useState([]);
+    const [selectedChart, setSelectedChart] = useState("drivers"); // Driver Standings set to display as default when page loads
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchDriverStandings = async () => {
+        const fetchStandingsData = async () => {
             try {
-                const data = await apiService.getDriverStandings();
-                const standings = data;
-                setDriverStandings(standings);
+                const DriversData = await apiService.getDriverStandings();
+                const driverStandings = DriversData;
+                setDriverStandings(driverStandings);
+
+                const constructorsData =
+                    await apiService.getConstructorStandings();
+                const constructorStandings = constructorsData;
+                setConstructorStandings(constructorStandings);
             } catch (error) {
                 setError(error.message);
             } finally {
                 setLoading(false);
             }
         };
-        fetchDriverStandings();
+        fetchStandingsData();
     }, []);
     if (loading)
         return (
@@ -34,16 +42,30 @@ const DriverStandingsInfo = () => {
         return (
             <div className="ErrorContainer">
                 <p>
-                    <i className="fa-solid fa-triangle-exclamation fa-beat"></i>:{" "}
-                    {error}
+                    <i className="fa-solid fa-triangle-exclamation fa-beat"></i>
                 </p>
             </div>
         );
     return (
-        <main>
-            <h1>Driver Standings</h1>
-            <DriverStandingsList driverStandings={driverStandings} />
-        </main>
+        <div>
+            <div className="ChartToggleButtons">
+                <button onClick={() => setSelectedChart("drivers")}>
+                    2024 Driver Standings
+                </button>
+                <button onClick={() => setSelectedChart("constructors")}>
+                    2024 Constructor Standings
+                </button>
+            </div>
+            {selectedChart === "drivers" && driverStandings.length > 0 && (
+                <DriverStandingsList driverStandings={driverStandings} />
+            )}
+            {selectedChart === "constructors" &&
+                constructorStandings.length > 0 && (
+                    <ConstructorStandingsList
+                        constructorStandings={constructorStandings}
+                    />
+                )}
+        </div>
     );
 };
 

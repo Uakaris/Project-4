@@ -1,5 +1,3 @@
-import xml2js from "xml2js";
-
 const getAllDriversData = async () => {
     const BASE_URL = "https://api.openf1.org/v1/drivers";
 
@@ -45,14 +43,15 @@ const getDriverStandings = async () => {
     }
 };
 
-// Test function to get driver standings - 
+// Test function to get driver standings -
 
 // getDriverStandings().then((driverStandings) => {
 //     console.log(driverStandings);
 // });
 
 const getConstructorStandings = async () => {
-    const BASE_URL = "http://ergast.com/api/f1/current/constructorStandings.json";
+    const BASE_URL =
+        "http://ergast.com/api/f1/current/constructorStandings.json";
 
     try {
         const response = await fetch(BASE_URL);
@@ -64,7 +63,6 @@ const getConstructorStandings = async () => {
         return data;
     } catch (error) {
         console.error("Error fetching construcot standings:", error);
-        
     }
 };
 
@@ -72,19 +70,9 @@ const getConstructorStandings = async () => {
 //     console.log(constructorStandings);
 // });
 
-// Below function was an attempt to get driver info from ergast api as they have drivers by seaon.
-// May need to come back to this.
-
-// getDriversBySeason = async () => {
-//     const BASE_URL = 'http://ergast.com/api/f1';
-//     try {
-//         const response = await fetch(BASE_URL + '/2024/drivers');
-
-//         const data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error("Error fetching driver data by season", error);
-//     }
-// };
-
-export { getAllDriversData, getLapData, getDriverStandings, getConstructorStandings };
+export {
+    getAllDriversData,
+    getLapData,
+    getDriverStandings,
+    getConstructorStandings,
+};

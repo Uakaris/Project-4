@@ -35,8 +35,7 @@ const DriverInfo = () => {
         return (
             <div className="ErrorContainer">
                 <p>
-                    <i className="fa-solid fa-triangle-exclamation fa-beat"></i>:{" "}
-                    {error}
+                    <i className="fa-solid fa-triangle-exclamation fa-beat"></i>
                 </p>
             </div>
         );

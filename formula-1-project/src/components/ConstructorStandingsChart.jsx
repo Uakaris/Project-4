@@ -1,23 +1,3 @@
-// const DriverStandingsChart = ({ driver }) => {
-//     return (
-//         <li className="DriverStandingsCard">
-//             <h2>{`${driver.Driver.givenName} ${driver.Driver.familyName}`}</h2>
-//             <p>
-//                 <strong>Position:</strong> {driver.position}
-//             </p>
-//             <p>
-//                 <strong>Points:</strong> {driver.points}
-//             </p>
-//             <p>
-//                 <strong>Wins:</strong> {driver.wins}
-//             </p>
-//             <p>
-//                 <strong>Driver ID:</strong> {driver.Driver.driverId}
-//             </p>
-//         </li>
-//     );
-// };
-
 import { Bar } from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -40,18 +20,19 @@ ChartJS.register(
     Legend
 );
 
-const DriverStandingsChart = ({ driverStandings }) => {
+const ConstructorStandingsChart = ({ constructorStandings }) => {
     const chartData = useMemo(() => {
-        const labels = driverStandings.map(
-            (driver) => `${driver.Driver.givenName} ${driver.Driver.familyName}`
+        const labels = constructorStandings.map(
+            (constructor) => constructor.Constructor.name
         );
-        const data = driverStandings.map((driver) => driver.points);
+
+        const data = constructorStandings.map((constructor) => constructor.points);
 
         return {
             labels,
             datasets: [
                 {
-                    label: "Driver Points",
+                    label: "Constructor Points",
                     data,
                     backgroundColor: "rgba(75, 192, 192, 0.2)",
                     borderColor: "#04d9ff",
@@ -59,7 +40,7 @@ const DriverStandingsChart = ({ driverStandings }) => {
                 },
             ],
         };
-    }, [driverStandings]);
+    }, [constructorStandings]);
 
     return (
         <div className="ChartContainer">
@@ -73,7 +54,7 @@ const DriverStandingsChart = ({ driverStandings }) => {
                         },
                         title: {
                             display: true,
-                            text: " 2024 Driver Standings",
+                            text: " 2024 Constructor Standings",
                         },
                     },
                 }}
@@ -82,4 +63,4 @@ const DriverStandingsChart = ({ driverStandings }) => {
     );
 };
 
-export default DriverStandingsChart;
+export default ConstructorStandingsChart;
