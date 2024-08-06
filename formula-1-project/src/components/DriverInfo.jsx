@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import * as apiService from "../Services/apiService";
 import DriverList from "./driverList";
-import "../components/DriverInfo.css"
+import "../components/DriverInfo.css";
 
 const DriverInfo = () => {
     const [drivers, setDrivers] = useState([]);
@@ -27,7 +27,7 @@ const DriverInfo = () => {
         return (
             <div className="LoadingContainer">
                 <p>
-                <i className="fa-solid fa-spinner fa-spin"></i>
+                    <i className="fa-solid fa-spinner fa-spin"></i>
                 </p>
             </div>
         );

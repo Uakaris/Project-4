@@ -1,5 +1,3 @@
-import DriverInfo from "../components/DriverInfo";
-
 import "../components/LandingPage.css";
 
 const LandingPage = () => {

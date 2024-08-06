@@ -13,7 +13,7 @@ const NavBar = () => {
                     <Link to="/driverInfo">Drivers</Link>
                 </li>
                 <li>
-                    <Link to="/driverStandings">Standings</Link>
+                    <Link to="/standings">Standings</Link>
                 </li>
                 <li>
                     <Link to="/about">About</Link>

@@ -1,11 +1,13 @@
-.LoadingContainer, .ErrorContainer {
+.LoadingContainer,
+.ErrorContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.fa-spinner, .fa-triangle-exclamation {
+.fa-spinner,
+.fa-triangle-exclamation {
     font-size: 300px;
     color: #04d9ff;
 }

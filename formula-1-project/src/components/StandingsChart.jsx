@@ -41,27 +41,27 @@ ChartJS.register(
 );
 
 const driverColors = {
-    "33": { backgroundColor: "#3671C6" },
-    "4": { backgroundColor: "#FF8000" },
-    "16": { backgroundColor: "#E80020" },
-    "81": { backgroundColor: "#FF8000" },
-    "55": { backgroundColor: "#E80020" },
-    "44": { backgroundColor: "#27F4D2" },
-    "11": { backgroundColor: "#3671C6" },
-    "63": { backgroundColor: "#27F4D2" },
-    "14": { backgroundColor: "#229971" },
-    "18": { backgroundColor: "#229971" },
-    "27": { backgroundColor: "#B6BABD" },
-    "22": { backgroundColor: "#6692FF" },
-    "3": { backgroundColor: "#6692FF"  },
-    "38": { backgroundColor: "#E80020" },
-    "10": { backgroundColor: "#0093cc" },
-    "20": { backgroundColor: "#B6BABD" },
-    "31": { backgroundColor: "#0093cc" },
-    "23": { backgroundColor: "#64C4FF" },
-    "2": { backgroundColor: "#64C4FF" },
-    "24": { backgroundColor: "#52E252" },
-    "77": { backgroundColor: "#52E252" }
+    33: { backgroundColor: "#3671C6" },
+    4: { backgroundColor: "#FF8000" },
+    16: { backgroundColor: "#E80020" },
+    81: { backgroundColor: "#FF8000" },
+    55: { backgroundColor: "#E80020" },
+    44: { backgroundColor: "#27F4D2" },
+    11: { backgroundColor: "#3671C6" },
+    63: { backgroundColor: "#27F4D2" },
+    14: { backgroundColor: "#229971" },
+    18: { backgroundColor: "#229971" },
+    27: { backgroundColor: "#B6BABD" },
+    22: { backgroundColor: "#6692FF" },
+    3: { backgroundColor: "#6692FF" },
+    38: { backgroundColor: "#E80020" },
+    10: { backgroundColor: "#0093cc" },
+    20: { backgroundColor: "#B6BABD" },
+    31: { backgroundColor: "#0093cc" },
+    23: { backgroundColor: "#64C4FF" },
+    2: { backgroundColor: "#64C4FF" },
+    24: { backgroundColor: "#52E252" },
+    77: { backgroundColor: "#52E252" },
 };
 
 const DriverStandingsChart = ({ driverStandings }) => {
@@ -84,7 +84,9 @@ const DriverStandingsChart = ({ driverStandings }) => {
                 {
                     label: "Driver Points",
                     data,
-                    backgroundColor: colors.map(color => color.backgroundColor),
+                    backgroundColor: colors.map(
+                        (color) => color.backgroundColor
+                    ),
                     borderColor: "#04d9ff",
                     borderWidth: 3,
                 },

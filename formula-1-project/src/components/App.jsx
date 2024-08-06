@@ -1,6 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
-import { getAllDriversData, getDriverStandings } from "../Services/apiService";
+import {
+    getAllDriversData,
+    getDriverStandings,
+    getConstructorStandings,
+} from "../Services/apiService";
 import DriverInfo from "../components/DriverInfo";
 import DriverStandingsInfo from "../components/StandingsInfo";
 import LandingPage from "../components/LandingPage";
@@ -20,10 +24,11 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/driverStandings"
+                    path="/standings"
                     element={
                         <DriverStandingsInfo
                             getDriverStandings={getDriverStandings}
+                            getConstructorStandings={getConstructorStandings}
                         />
                     }
                 />
