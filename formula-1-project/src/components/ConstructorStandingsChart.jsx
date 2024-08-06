@@ -59,8 +59,9 @@ const ConstructorStandingsChart = ({ constructorStandings }) => {
                     backgroundColor: colors.map(
                         (color) => color.backgroundColor
                     ),
-                    borderColor: "#04d9ff",
-                    borderWidth: 3,
+                    // borderColor: "#04d9ff",
+                    // borderWidth: 2,
+                    fontFamily: "orbitron",
                 },
             ],
         };

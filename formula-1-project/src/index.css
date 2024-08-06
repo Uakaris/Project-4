@@ -6,6 +6,37 @@
 
 body {
     background-color: #1a1a1a;
-    font-family: Lato, sans-serif;
+    /* background: linear-gradient(
+      217deg,
+      rgba(34, 22, 22, 0.8),
+      rgba(38, 107, 119, 0.151) 70.71%
+    ),
+    linear-gradient(127deg, rgba(64, 78, 80, 0), rgba(18, 19, 19, 0) 70.71%),
+    linear-gradient(336deg, rgba(144, 144, 183, 0.496), rgba(55, 55, 105, 0) 70.71%); */
+    font-family: "orbitron", sans-serif;
+    font-optical-sizing: auto;
     color: #a1a1a1;
+    /* overflow: hidden; */
+}
+
+.ChartToggleButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 42px;
+}
+
+
+.StandingsButtons {
+    padding: 20px;
+    font-family: "orbitron", sans-serif;
+    font-optical-sizing: auto;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 2px 8px 0 #04d9ff;
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }

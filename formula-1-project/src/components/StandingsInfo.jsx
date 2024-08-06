@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
 import * as apiService from "../Services/apiService";
 import DriverStandingsList from "./StandingsCharts";
@@ -7,9 +8,12 @@ import ConstructorStandingsList from "./ConstructorStandingsCharts";
 const DriverStandingsInfo = () => {
     const [driverStandings, setDriverStandings] = useState([]);
     const [constructorStandings, setConstructorStandings] = useState([]);
-    const [selectedChart, setSelectedChart] = useState("drivers"); // Driver Standings set to display as default when page loads
+    const [selectedChart, setSelectedChart] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const path = window.location.pathname;
+    console.log(path);
 
     useEffect(() => {
         const fetchStandingsData = async () => {
@@ -47,15 +51,26 @@ const DriverStandingsInfo = () => {
             </div>
         );
     return (
-        <div>
-            <div className="ChartToggleButtons">
-                <button onClick={() => setSelectedChart("drivers")}>
-                    2024 Driver Standings
-                </button>
-                <button onClick={() => setSelectedChart("constructors")}>
-                    2024 Constructor Standings
-                </button>
-            </div>
+        <div className="ButtonsContainer">
+            {selectedChart === null && (
+                <div className="ChartToggleButtons">
+                    <button
+                        className="StandingsButtons"
+                        onClick={() => setSelectedChart("drivers")}
+                    >
+                        2024 Driver Standings
+                    </button>
+                    <button
+                        className="StandingsButtons"
+                        onClick={() => setSelectedChart("constructors")}
+                    >
+                        2024 Constructor Standings
+                    </button>
+                </div>
+            )}
+            {selectedChart !== null && (
+                <button onClick={() => setSelectedChart(null)}>Back</button>
+            )}
             {selectedChart === "drivers" && driverStandings.length > 0 && (
                 <DriverStandingsList driverStandings={driverStandings} />
             )}

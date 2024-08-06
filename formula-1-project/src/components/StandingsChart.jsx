@@ -87,8 +87,8 @@ const DriverStandingsChart = ({ driverStandings }) => {
                     backgroundColor: colors.map(
                         (color) => color.backgroundColor
                     ),
-                    borderColor: "#04d9ff",
-                    borderWidth: 3,
+                    // borderColor: "#04d9ff",
+                    // borderWidth: 2,
                 },
             ],
         };
