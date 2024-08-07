@@ -51,7 +51,7 @@ const DriverStandingsInfo = () => {
             </div>
         );
     return (
-        <div className="ButtonsContainer">
+        <div className="ButtonsAndChartsContainer">
             {selectedChart === null && (
                 <div className="ChartToggleButtons">
                     <button
@@ -68,18 +68,28 @@ const DriverStandingsInfo = () => {
                     </button>
                 </div>
             )}
-            {selectedChart !== null && (
-                <button onClick={() => setSelectedChart(null)}>Back</button>
-            )}
+
             {selectedChart === "drivers" && driverStandings.length > 0 && (
                 <DriverStandingsList driverStandings={driverStandings} />
             )}
+
             {selectedChart === "constructors" &&
                 constructorStandings.length > 0 && (
                     <ConstructorStandingsList
                         constructorStandings={constructorStandings}
                     />
                 )}
+
+            <div className="BackButtonContainer">
+                {selectedChart !== null && (
+                    <button
+                        className="BackButton"
+                        onClick={() => setSelectedChart(null)}
+                    >
+                        Back
+                    </button>
+                )}
+            </div>
         </div>
     );
 };
