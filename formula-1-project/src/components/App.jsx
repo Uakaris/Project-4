@@ -4,8 +4,10 @@ import {
     getAllDriversData,
     getDriverStandings,
     getConstructorStandings,
+    getLatestRaceResults,
 } from "../Services/apiService";
 import DriverInfo from "../components/DriverInfo";
+import LatestRaceResultsInfo from "./LatestRaceResultsInfo";
 import DriverStandingsInfo from "../components/StandingsInfo";
 import LandingPage from "../components/LandingPage";
 import NavBar from "../components/NavBar";
@@ -21,6 +23,14 @@ const App = () => {
                     path="/driverInfo"
                     element={
                         <DriverInfo getAllDriversData={getAllDriversData} />
+                    }
+                />
+                <Route
+                    path="/latestRaceResults"
+                    element={
+                        <LatestRaceResultsInfo
+                            getLatestRaceResults={getLatestRaceResults}
+                        />
                     }
                 />
                 <Route
