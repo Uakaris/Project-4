@@ -7,23 +7,23 @@ const LatestRaceResultsCard = ({ results, driver }) => {
                 alt={driver.full_name || "Driver"}
             /> */}
             <p>
-                <strong>Points:</strong>
+                <strong>Points: </strong>
                 {results.points || "N/A"}
             </p>
             <p>
-                <strong>Number:</strong>
+                <strong>Number: </strong>
                 {results.number || "N/A"}
             </p>
             <p>
-                <strong>Starting Position:</strong>
+                <strong>Starting Position: </strong>
                 {results.grid || "N/A"}
             </p>
             <p>
-                <strong>Status:</strong>
+                <strong>Status: </strong>
                 {results.status || "N/A"}
             </p>
             <p>
-                <strong>Laps Completed:</strong>
+                <strong>Laps Completed: </strong>
                 {results.laps || "N/A"}
             </p>
         </li>

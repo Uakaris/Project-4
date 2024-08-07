@@ -12,7 +12,7 @@ const LatestRaceResultsInfo = () => {
         const fetchData = async () => {
             try {
                 const data = await apiService.getLatestRaceResults();
-                setResults(data || []);
+                setResults(data.resultsData || []);
             } catch (error) {
                 setError(error.message);
             } finally {

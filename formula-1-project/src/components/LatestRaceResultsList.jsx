@@ -1,8 +1,8 @@
 import LatestRaceResultsCard from "../components/LatestRaceResultsCard";
 
-const LatestRaceResultsList = (props) => {
-    const RaceResultsListItems = props.results.map((results) => (
-        <LatestRaceResultsCard key={results.results_number} results={results} />
+const LatestRaceResultsList = ({ results }) => {
+    const RaceResultsListItems = results.map((results) => (
+        <LatestRaceResultsCard key={results.number} results={results} />
     ));
     return (
         <section>
