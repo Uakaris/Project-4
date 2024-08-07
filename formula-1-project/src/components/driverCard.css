@@ -1,6 +1,8 @@
 .DriversList {
     padding: 0;
     padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: grid;
     grid-row-gap: 32px;
     grid-column-gap: 16px;

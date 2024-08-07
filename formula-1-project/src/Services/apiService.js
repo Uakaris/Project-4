@@ -32,6 +32,7 @@ const getDriverStandings = async () => {
     try {
         const response = await fetch(BASE_URL);
         let data = await response.json();
+
         // Drill down into the data to get DriverStandings
         data = data["MRData"];
         data = data["StandingsTable"];
@@ -56,13 +57,14 @@ const getConstructorStandings = async () => {
     try {
         const response = await fetch(BASE_URL);
         let data = await response.json();
+
         data = data["MRData"];
         data = data["StandingsTable"];
         data = data["StandingsLists"];
         data = data[0]["ConstructorStandings"];
         return data;
     } catch (error) {
-        console.error("Error fetching construcot standings:", error);
+        console.error("Error fetching constructor standings:", error);
     }
 };
 
@@ -70,9 +72,30 @@ const getConstructorStandings = async () => {
 //     console.log(constructorStandings);
 // });
 
+const getLatestRaceResults = async () => {
+    const BASE_URL = "http://ergast.com/api/f1/current/last/results.json";
+    try {
+        const response = await fetch(BASE_URL);
+
+        const data = await response.json();
+
+        const raceData = data.MRData.RaceTable.Races;
+        const resultsData = raceData[0].Results;
+
+        return { raceData, resultsData };
+    } catch (error) {
+        console.error("Error fetching race results:", error);
+    }
+};
+
+// getLatestRaceResults().then((latestRaceResults) => {
+//     console.log(latestRaceResults);
+// });
+
 export {
     getAllDriversData,
     getLapData,
     getDriverStandings,
     getConstructorStandings,
+    getLatestRaceResults,
 };
