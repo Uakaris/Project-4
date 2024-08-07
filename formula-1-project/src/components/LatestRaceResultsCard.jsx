@@ -1,3 +1,5 @@
+import "../components/LatestRaceResultsCard.css";
+
 const LatestRaceResultsCard = ({ results, driver }) => {
     return (
         <li className="LatestRaceResultsCard">
@@ -6,6 +8,13 @@ const LatestRaceResultsCard = ({ results, driver }) => {
                 src={driver.headshot_url || "default-image-url"}
                 alt={driver.full_name || "Driver"}
             /> */}
+            <p>
+                <strong>
+                    {results.Driver.givenName || "N/A"}{" "}
+                    {results.Driver.familyName || "N/A"} -{" "}
+                    {results.Constructor.constructorId || "N/A"}
+                </strong>
+            </p>
             <p>
                 <strong>Points: </strong>
                 {results.points || "N/A"}

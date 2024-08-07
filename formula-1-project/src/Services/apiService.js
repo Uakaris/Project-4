@@ -11,20 +11,22 @@ const getAllDriversData = async () => {
     }
 };
 
-const getLapData = async () => {
-    const BASE_URL = "https://api.openf1.org/v1/laps";
+// TODO: Complete this functionality
 
-    try {
-        const response = await fetch(
-            BASE_URL + "?session_key=latest&driver_number=1"
-        );
+// const getLapData = async () => {
+//     const BASE_URL = "https://api.openf1.org/v1/laps";
 
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error fetching lap data", error);
-    }
-};
+//     try {
+//         const response = await fetch(
+//             BASE_URL + "?session_key=latest&driver_number=1"
+//         );
+
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error("Error fetching lap data", error);
+//     }
+// };
 
 const getDriverStandings = async () => {
     const BASE_URL = "https://ergast.com/api/f1/current/driverStandings.json";
@@ -104,7 +106,6 @@ getLatestRaceResults().then((latestRaceResults) => {
 
 export {
     getAllDriversData,
-    getLapData,
     getDriverStandings,
     getConstructorStandings,
     getLatestRaceResults,
