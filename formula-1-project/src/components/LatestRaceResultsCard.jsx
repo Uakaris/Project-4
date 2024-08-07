@@ -2,10 +2,10 @@ const LatestRaceResultsCard = ({ results, driver }) => {
     return (
         <li className="LatestRaceResultsCard">
             <h2>{results.position || "No position info available"}</h2>
-            <img
+            {/* <img
                 src={driver.headshot_url || "default-image-url"}
                 alt={driver.full_name || "Driver"}
-            />
+            /> */}
             <p>
                 <strong>Points:</strong>
                 {results.points || "N/A"}

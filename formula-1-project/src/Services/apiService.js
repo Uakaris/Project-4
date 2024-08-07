@@ -82,17 +82,17 @@ const getLatestRaceResults = async () => {
         const raceData = data.MRData.RaceTable.Races;
         const resultsData = raceData[0].Results;
 
-        const enhancedResultsData = resultsData.map((result) => ({
-            ...result,
-            driver: {
-                driverId: result.Driver.driverId,
-                givenName: result.Driver.givenName,
-                familyName: result.Driver.familyName,
-                nationality: result.Driver.nationality,
-            },
-        }));
+        // const enhancedResultsData = resultsData.map((result) => ({
+        //     ...result,
+        //     driver: {
+        //         driverId: result.Driver.driverId,
+        //         givenName: result.Driver.givenName,
+        //         familyName: result.Driver.familyName,
+        //         nationality: result.Driver.nationality,
+        //     },
+        // }));
 
-        return { raceData, resultsData, enhancedResultsData };
+        return { raceData, resultsData };
     } catch (error) {
         console.error("Error fetching race results:", error);
     }
