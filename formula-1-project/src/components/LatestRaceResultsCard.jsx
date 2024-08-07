@@ -1,18 +1,34 @@
 import "../components/LatestRaceResultsCard.css";
 
-const LatestRaceResultsCard = ({ results, driver }) => {
+const LatestRaceResultsCard = ({ results, race, driver }) => {
+    const formatConstructorId = (id) => {
+        if (!id) return "N/A";
+
+        const replacedId = id.replace(/_/g, " ");
+
+        const capitalisedId = replacedId
+            .split(" ")
+            .map(
+                (word) =>
+                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            )
+            .join(" ");
+
+        return capitalisedId;
+    };
     return (
         <li className="LatestRaceResultsCard">
             <h2>{results.position || "No position info available"}</h2>
             {/* <img
-                src={driver.headshot_url || "default-image-url"}
-                alt={driver.full_name || "Driver"}
-            /> */}
+                    src={driver.headshot_url || "default-image-url"}
+                    alt={driver.full_name || "Driver"}
+                /> */}
             <p>
                 <strong>
                     {results.Driver.givenName || "N/A"}{" "}
                     {results.Driver.familyName || "N/A"} -{" "}
-                    {results.Constructor.constructorId || "N/A"}
+                    {formatConstructorId(results.Constructor.constructorId) ||
+                        "N/A"}
                 </strong>
             </p>
             <p>
