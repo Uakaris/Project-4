@@ -75,13 +75,14 @@ body {
     text-shadow: 1px 1px 10px #04d9ff;
     cursor: pointer;
 }
+    
 
-/* .ChartsParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.ChartsParent {
+    padding-top: 20px;
+}
+
+canvas {
+    height: calc(75vh);
     cursor: crosshair;
-    width: 100%;
-    height: 100%;
-    padding-top: 50px;
-} */
+}
+

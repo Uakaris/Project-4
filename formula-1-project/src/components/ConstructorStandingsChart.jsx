@@ -68,11 +68,12 @@ const ConstructorStandingsChart = ({ constructorStandings }) => {
     }, [constructorStandings]);
 
     return (
-        <div className="ChartContainer">
+        <div>
             <Bar
                 data={chartData}
                 options={{
-                    responsive: true,
+                    maintainAspectRatio: false,
+                    
                     plugins: {
                         legend: {
                             position: "top",

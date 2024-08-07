@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 
 import * as apiService from "../Services/apiService";
 import DriverStandingsList from "./StandingsCharts";
@@ -11,9 +10,6 @@ const DriverStandingsInfo = () => {
     const [selectedChart, setSelectedChart] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    const path = window.location.pathname;
-    console.log(path);
 
     useEffect(() => {
         const fetchStandingsData = async () => {
@@ -69,16 +65,17 @@ const DriverStandingsInfo = () => {
                 </div>
             )}
 
-            {selectedChart === "drivers" && driverStandings.length > 0 && (
-                <DriverStandingsList driverStandings={driverStandings} />
-            )}
-
-            {selectedChart === "constructors" &&
-                constructorStandings.length > 0 && (
-                    <ConstructorStandingsList
-                        constructorStandings={constructorStandings}
-                    />
+            <div className="ChartsParent">
+                {selectedChart === "drivers" && driverStandings.length > 0 && (
+                    <DriverStandingsList driverStandings={driverStandings} />
                 )}
+                {selectedChart === "constructors" &&
+                    constructorStandings.length > 0 && (
+                        <ConstructorStandingsList
+                            constructorStandings={constructorStandings}
+                        />
+                    )}
+            </div>
 
             <div className="BackButtonContainer">
                 {selectedChart !== null && (

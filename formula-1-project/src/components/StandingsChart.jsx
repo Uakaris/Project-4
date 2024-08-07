@@ -87,19 +87,17 @@ const DriverStandingsChart = ({ driverStandings }) => {
                     backgroundColor: colors.map(
                         (color) => color.backgroundColor
                     ),
-                    // borderColor: "#04d9ff",
-                    // borderWidth: 2,
                 },
             ],
         };
     }, [driverStandings]);
 
     return (
-        <div className="ChartContainer">
+        <div>
             <Bar
                 data={chartData}
                 options={{
-                    responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             position: "top",
