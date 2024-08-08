@@ -7,7 +7,7 @@ const NavBar = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">F1 LapInsights</Link>
+                    <Link to="/">F1 Focus</Link>
                 </li>
                 <li>
                     <Link to="/driverInfo">Drivers</Link>
