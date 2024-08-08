@@ -89,9 +89,9 @@ const getLatestRaceResults = async () => {
     }
 };
 
-// getLatestRaceResults().then((latestRaceResults) => {
-//     console.log(latestRaceResults);
-// });
+getLatestRaceResults().then((latestRaceResults) => {
+    console.log(latestRaceResults);
+});
 
 export {
     getAllDriversData,
