@@ -78,21 +78,10 @@ const getLatestRaceResults = async () => {
     const BASE_URL = "http://ergast.com/api/f1/current/last/results.json";
     try {
         const response = await fetch(BASE_URL);
-
         const data = await response.json();
 
         const raceData = data.MRData.RaceTable.Races;
         const resultsData = raceData[0].Results;
-
-        // const enhancedResultsData = resultsData.map((result) => ({
-        //     ...result,
-        //     driver: {
-        //         driverId: result.Driver.driverId,
-        //         givenName: result.Driver.givenName,
-        //         familyName: result.Driver.familyName,
-        //         nationality: result.Driver.nationality,
-        //     },
-        // }));
 
         return { raceData, resultsData };
     } catch (error) {
@@ -100,9 +89,9 @@ const getLatestRaceResults = async () => {
     }
 };
 
-getLatestRaceResults().then((latestRaceResults) => {
-    console.log(latestRaceResults);
-});
+// getLatestRaceResults().then((latestRaceResults) => {
+//     console.log(latestRaceResults);
+// });
 
 export {
     getAllDriversData,
